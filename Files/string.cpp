@@ -93,7 +93,7 @@ int* TString::Find(TString& p)
 	return ind;
 }
 
-TString* TString::Split(char c)
+TString* TString::Split(char c) // массив символов строки без повторений
 {
 	int count = 0;
 	for (int i = 0; i < length - 1; i++)	if (string[i] == c)	count++;
@@ -124,7 +124,7 @@ TString* TString::Split(char c)
 	return strings;
 }
 
-TString& TString::DoubleStr(int k)
+TString& TString::DoubleStr(int k) // дублирование строки k раз
 {
 	if (string == 0) throw "String is empty";
 	int length = Str_Len(string) * k + 1;
@@ -145,7 +145,7 @@ TString& TString::DoubleStr(int k)
 	return *this;
 }
 
-char TString::Most_Popular_Symbol()
+char TString::Most_Popular_Symbol() // наиболее часто встречающийся символ в строке
 {
 	if (string == 0) throw "String is empty";
 	int symb[128] = { 0 };
@@ -162,7 +162,7 @@ char TString::Most_Popular_Symbol()
 	return index;
 }
 
-int** TString::String_Of_Symbols()
+int** TString::String_Of_Symbols() // какой символ сколько раз встречается в строке
 {
 	if (string == 0) throw "String is empty";
 	int symb[128] = { 0 };
