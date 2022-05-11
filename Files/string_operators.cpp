@@ -17,7 +17,7 @@ TString TString::operator+(const TString& p)
 	if (p.string == 0) return *this;
 	TString A;
 	int len = length + p.length - 1;
-	A.string = new char[len];
+	A.string = new char[len + 1];
 	A.length = len;
 	for (int i = 0; i < length - 1; i++)	A.string[i] = string[i];
 	for (int j = length - 1; j < len; j++)  A.string[j] = p.string[j - length + 1];
